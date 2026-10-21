@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Street Car Racing with Sound & Colors</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Start & Mode Selection Menu -->
+    <div id="startMenu">
+        <h1>REAL 3D STREET CAR RACING</h1>
+        <p>Controls: Arrow Keys / WASD (Up = Accelerate, Down = Brake, Left/Right = Steer)</p>
+        <div class="mode-buttons">
+            <button class="mode-btn easy" onclick="selectMode('easy')">EASY MODE</button>
+            <button class="mode-btn moderate" onclick="selectMode('moderate')">MODERATE MODE</button>
+            <button class="mode-btn hard" onclick="selectMode('hard')">HARD MODE</button>
+        </div>
+    </div>
+
+    <!-- HUD Overlay -->
+    <div id="hud" class="hidden">
+        <div class="hud-box">SCORE: <span id="scoreValue">0</span></div>
+        <div class="hud-box">TIME: <span id="timeValue">0</span>s</div>
+        <div class="hud-box">SPEED: <span id="speedValue">0</span> KM/H</div>
+        <div class="hud-box">HIGH SCORE: <span id="highScoreValue">0</span></div>
+    </div>
+
+    <!-- Game Over Overlay -->
+    <div id="gameOverScreen" class="hidden">
+        <h1>CRASHED! GAME OVER</h1>
+        <p>Final Score: <span id="finalScore">0</span></p>
+        <p>Time Survived: <span id="finalTime">0</span>s</p>
+        <button id="restartBtn" onclick="returnToMenu()">RETRY / MENU</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
